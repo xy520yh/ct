@@ -679,6 +679,40 @@
         },
         slideChangeTransitionEnd: function () {
           swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+
+          
+        $('input,textarea').on('blur',function(){  
+            window.scroll(0,0);  //重点是这一句
+        }); 
+        document.body.addEventListener('focusout', () => { //软键盘关闭事件
+
+window.scrollTo(0,0);
+
+})
+
+ var originalHeight=document.documentElement.clientHeight ||document.body.clientHeight;
+
+ window.onresize=function(){
+
+//键盘弹起与隐藏都会引起窗口的高度发生变化
+
+ var resizeHeight=document.documentElement.clientHeight || document.body.clientHeight;
+
+ if(resizeHeight-0<originalHeight-0){
+
+//当软键盘弹起，在此处操作
+
+}else{
+
+window.scrollTo(0,0); 
+
+//当软键盘收起，在此处操作
+
+ }
+
+
+ 
+ } 
        
         },
       },
