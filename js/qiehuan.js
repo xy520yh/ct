@@ -41,6 +41,8 @@ $(function () {
     }
   });
   $(".text_content1").blur(function(){
+    window.scroll(0,0);
+ alert('2')
   if($(this).val()==''){
     $(this).val("휴대폰 번호를 입력 （-없이 입력)")
   }
